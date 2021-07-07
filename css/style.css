@@ -35,8 +35,7 @@ li{list-style:none}
 
 html,body{ 
 	width:100%;
-	height:100%;
-	background:#111;
+	background:#141414;
 }
 
 html{
@@ -108,23 +107,50 @@ canvas{
 
 .container-content{
   max-width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   z-index: 2;
-}
-.portada-sitio{
-  max-width: 80%;
   display: flex;
-  z-index: 2;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  vertical-align: middle;
+}
+.empecemos{
+  cursor: pointer;
+  z-index: 999;
+}
+.container-content .empecemos h2{ 
+  margin: 0 auto;
+  text-align: center;
+  font-size: 24px;
+  
+}
+.container-content .empecemos a{ 
+  text-decoration: none;
+  color: #7C00FF ;
+  cursor: pointer;
+}
+
+.portada-sitio{
+  max-width: 100%;
+  display: flex;
+  z-index: 1;
   margin: 0 auto;
   opacity: 1;
   align-items: center;
   justify-content: center;
   position: relative;
   @media (max-width: 800px){
-      padding-top: 0;
-      width: 84vw;
+      flex-direction: column
   } 
 }
+@media screen and (max-width: 480px) {
+ .portada-sitio{
+  max-width: 95%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; } }
 
   div{
       display: flex;
@@ -139,14 +165,18 @@ canvas{
       flex-direction: column;
       justify-content: center;
       align-items: center;
-        width: 50%;
-        @media (max-width: 800px){
-            width: 100%;
-        }
+        width: 30%;
       }
+      @media screen and (max-width: 480px) {
+        .cosmos-header{
+         max-width: 95%;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           margin: 0 auto; } }
 
     img{
-        width: calc(188px + (406 - 188) * ((100vw - 800px) / (1640 - 800)));
+        max-width: 80%;
         @media (max-width: 800px){
             width: calc(188px + (412 - 188) * ((100vw - 300px) / (800 - 300)));
         }
@@ -156,10 +186,15 @@ canvas{
       width: 50%;
       display: flex;
       flex-direction: column;
-      @media (max-width: 800px){
-          width: 100%;
-      }
     }
+    @media screen and (max-width: 480px) {
+      .descripcion{
+        width: 95% ;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         margin: 30px auto; } }
+
     .descripcion p{
       padding-top: 20px;
       font-size: 20px;
@@ -241,8 +276,7 @@ canvas{
 #contenido #contenedor-contenido .bloque-etapas {
   display: flex;
   flex-direction: column;
-  margin-top: 8%;
-  margin-bottom: 8%; }
+  margin-top: 8%; }
   @media screen and (max-width: 480px) {
     #contenido #contenedor-contenido .bloque-etapas {
       margin-top: 70px;
@@ -311,14 +345,17 @@ canvas{
     justify-content: center;
     align-items: center;
     margin: 10% auto;
-    flex-direction: column; }
+    flex-direction: column;
+    background-image: url(../img/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
     @media screen and (max-width: 480px) {
       #contenido #contenedor-contenido .bloque-etapas .contenedor-etapas {
         margin: 0 auto 10% auto; } }
 
         #contenido #contenedor-contenido .bloque-etapas .contenedor-etapas .etapa {
           display: flex;
-          
           justify-content: space-around;
           margin-bottom: 10%; }
           #contenido #contenedor-contenido .bloque-etapas .contenedor-etapas .etapa:nth-child(2n){
@@ -329,10 +366,23 @@ canvas{
             justify-content: flex-end !important;
           }
           @media screen and (max-width: 480px) {
-            #contenido #contenedor-contenido .bloque-etapas .contenedor-etapas .etapa {
-              grid-template-areas: 'imagen' 'contenido';
-              grid-template-columns: 100% 100%;
+            .imagen {
               margin-bottom: 70px; } }
+          @media screen and (max-width: 480px) {
+            #contenido #contenedor-contenido .bloque-etapas .contenedor-etapas .etapa {
+              flex-direction: column-reverse;
+              justify-content: center;
+              align-items: center;
+              margin: 0 auto;
+              margin-bottom: 70px; } }
+
+              @media screen and (max-width: 480px) {
+                #contenido #contenedor-contenido .bloque-etapas .contenedor-etapas .etapa:nth-child(2n){
+                  flex-direction: column-reverse;
+                  justify-content: center;
+                  align-items: center;
+                  margin: 0 auto;
+                  margin-bottom: 70px; } }
 
 
       #contenido #contenedor-contenido .bloque-etapas .contenedor-etapas .etapa .contenido {
@@ -372,18 +422,18 @@ canvas{
             #contenido #contenedor-contenido .bloque-etapas .contenedor-etapas .etapa .contenido p {
               margin-bottom: 24px; } }
         #contenido #contenedor-contenido .bloque-etapas .contenedor-etapas .etapa .contenido a.mas-info {
-          background-image: url(img/mas_info_ico.svg);
+          background-image: url(../img/miscelanea_curva3.png);
           background-repeat: no-repeat;
           background-position: left 3px;
           background-size: 22px;
           font-size: 16px;
           font-weight: 300;
           text-decoration: none;
-          color: rgba(255, 255, 255, 0.9);
+          color: #F6FF40;
           padding-left: 30px;
           padding-bottom: 8px;
           margin-top: 42px;
-          display: block; }
+          display: block;}
           @media screen and (max-width: 480px) {
             #contenido #contenedor-contenido .bloque-etapas .contenedor-etapas .etapa .contenido a.mas-info {
               margin-top: 22px; } }
@@ -411,7 +461,7 @@ canvas{
     margin: 5% auto 5% auto;
     padding: 76px 20px;
     opacity: 0;
-    width: 90%;
+    width: 100%;
     max-width: 900px;
     height: auto;
     position: sticky;
@@ -458,7 +508,10 @@ canvas{
       font-weight: 300;
       margin: 0 auto 4% auto;
       max-width: 700px;
-      color: rgba(0, 0, 0, 0.9); }
+      color: rgba(0, 0, 0, 0.9);}
+      .myModal .modal-content p:last-child{
+        padding-bottom: 25px;
+      }
       @media screen and (max-width: 480px) {
         .myModal .modal-content p {
           font-size: 16px;
@@ -534,3 +587,24 @@ canvas{
       color: #000000;
       text-decoration: none;
       cursor: pointer; }
+
+      .logo-nav{
+        width: auto;
+        position: sticky;
+        top:18px;
+        display:inline-block;
+        z-index: 999;
+       padding: 20px
+      }
+      .logo-nav img{
+        max-width: 100px;
+      }
+      .footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      .footer p{
+        font-size: 14px !important;
+        color:rgb(119, 119, 119) !important;
+      }
